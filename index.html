@@ -13,9 +13,14 @@
 <body ng-app="quoraApp">
   <div ng-controller="QuestionCtrl">
     <div class='form-group'>
-        <label>Test</label>
-        <input ng-model="foo.bar" class='form-control' autofocus/>
-      </div>
+        <label>Ask a question:</label>
+        <input ng-model="question" class='form-control' autofocus/>
+    </div>
+
+    <div ng-repeat="q in questions">
+      {{ q.id }}
+      {{ q.question }}
+    </div>
   </div>
 </body>
 </html>

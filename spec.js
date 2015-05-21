@@ -5,8 +5,12 @@ describe('Quora Example App', function() {
   });
 
   it('should have a title', function() {
-    // var title = element(by.tagName('title'));
     expect(browser.getTitle()).toEqual("Quora App");
   });
+
+  it('should display questions', function() {
+    var questions = element.all(by.repeater('q in questions'));
+    expect(questions.count()).toEqual(3);
+  })
 
 });
