@@ -12,13 +12,13 @@
 </head>
 <body ng-app="quoraApp">
   <div ng-controller="QuestionCtrl">
-    <div class='form-group'>
-        <label>Ask a question:</label>
-        <input ng-model="question" class='form-control' autofocus/>
-    </div>
 
+    <form ng-submit="addQuestion()">
+      <input type="text" ng-model="questionText" placeholder="Ask your question here">
+      <input id="ask" type="submit" value="ASK!">
+    </form>
+    <br>
     <div ng-repeat="q in questions">
-      {{ q.id }}
       {{ q.question }}
     </div>
   </div>

@@ -4,18 +4,20 @@ angular.module('quoraApp', [])
 
     $scope.questions = Question.all();
 
+    $scope.addQuestion = function() {
+      // get questionText and add to questionList
+      $scope.questions.push({ question: $scope.questionText });
+    };
+
   }])
 
   .factory('Question', function() {
 
     var questions = [{
-      id: 0,
       question: 'Why is the sky blue?'
     }, {
-      id: 1,
       question: 'Why is grass green?'
     }, {
-      id: 2,
       question: 'What is the meaning of life?'
     }];
 
